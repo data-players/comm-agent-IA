@@ -290,7 +290,7 @@ p {
 }
 
 .engagement-item.sovereign:before {
-  content: "🇫🇷";
+  content: "🇪🇺";
 }
 
 .engagement-item.lowcode:before {
@@ -323,49 +323,64 @@ p {
 
 /* Footer */
 footer {
-  padding: 60px 0 30px;
-  background-color: var(--background-dark);
-  color: white;
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 3rem 0;
+  margin-top: 4rem;
+  border-top: 1px solid #e9ecef;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
-  margin-bottom: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-col {
+  padding: 0.5rem;
 }
 
 .footer-logo {
-  margin-bottom: 15px;
-  height: 40px;
+  max-width: 150px;
+  margin-bottom: 1rem;
 }
 
 .footer-col h4 {
-  color: white;
-  margin-bottom: 20px;
   font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #0056b3;
+}
+
+.footer-col p {
+  line-height: 1.6;
+  color: #555;
 }
 
 .social-links {
   display: flex;
-  gap: 15px;
+  gap: 1rem;
 }
 
 .social-link {
-  color: white;
+  color: #0056b3;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 .social-link:hover {
+  color: #003d7a;
   text-decoration: underline;
 }
 
 .copyright {
   text-align: center;
-  padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid #e9ecef;
+  color: #6c757d;
   font-size: 0.9rem;
-  color: #9ca3af;
 }
 
 /* Responsive Adjustments */
@@ -394,4 +409,20 @@ footer {
   .hero-banner {
     padding: 60px 0;
   }
-} 
+}
+
+/* Style pour l'en-tête de section avec icône à gauche du titre */
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header .section-icon {
+  margin-right: 1rem;
+  font-size: 2rem;
+}
+
+.section-header h2 {
+  margin: 0;
+}
