@@ -46,10 +46,15 @@
 
     <!-- Section 2: La solution -->
     <section id="solution" class="section-card">
+<<<<<<< HEAD
       <div class="section-header">
         <div class="section-icon">💡</div>
-        <h2>Notre solution : un agent IA au cœur de votre base de connaissances</h2>
+        <h2>Notre solution : un agent IA intelligent au cœur de votre base de connaissances</h2>
       </div>
+=======
+      <div class="section-icon">💡</div>
+      <h2>Notre solution : un agent IA au cœur de votre base de connaissances</h2>
+>>>>>>> 0c83235210f43ca09d4f93e204dfed3f66265814
       <div class="section-content">
         <div class="solution-grid">
           <div class="solution-feature">
