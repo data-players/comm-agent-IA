@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent IA - DATA PLAYERS</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="navigation.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <img src="./logo.webp" alt="Data Players Logo" class="nav-logo">
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      <span class="nav-title">Offre Agent IA</span>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item active" onclick="showPage('general')">Présentation générale</li>
+        <li class="nav-item" onclick="showPage('interne')">Agent interne</li>
+        <li class="nav-item" onclick="showPage('public')">Agent public</li>
+        <li class="nav-item" onclick="showPage('qualite')">Qualité de service</li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="page-content">
+    <!-- Page générale -->
+    <div id="page-general" class="page-section active">
+      {{PITCH_CONTENT}}
+    </div>
+
+    <!-- Page interne -->
+    <div id="page-interne" class="page-section">
+      {{INTERNE_CONTENT}}
+    </div>
+
+    <!-- Page public -->
+    <div id="page-public" class="page-section">
+      {{PUBLIC_CONTENT}}
+    </div>
+    
+    <!-- Page qualité -->
+    <div id="page-qualite" class="page-section">
+      {{QUALITE_CONTENT}}
+    </div>
+  </div>
+
+  <!-- Footer commun -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="./logo.webp" alt="Data Players Logo" class="footer-logo">
+        <p>Spécialistes de l'IA et des systèmes d'information depuis 2018</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>contact@dataplayers.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Suivez-nous</h4>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/company/data-players-nantes" class="social-link">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 DATA PLAYERS – Tous droits réservés.
+    </div>
+  </footer>
+
+  <script src="navigation.js"></script>
+</body>
+</html> 

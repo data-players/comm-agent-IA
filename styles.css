@@ -82,7 +82,6 @@ p {
 
 .highlight {
   color: var(--accent-color);
-  font-weight: 600;
 }
 
 .logo-container {
@@ -425,4 +424,46 @@ footer {
 
 .section-header h2 {
   margin: 0;
+}
+
+/* Navigation enhancements */
+.main-nav {
+  transition: all 0.3s ease;
+}
+
+.nav-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.nav-item:hover::before {
+  left: 100%;
+}
+
+/* Smooth page transitions */
+.page-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.page-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ensure hero banners work correctly in navigation context */
+.hero-banner {
+  margin-top: 0;
 }
