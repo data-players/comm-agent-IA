@@ -61,7 +61,6 @@ p {
   background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
   color: white;
   padding: 80px 0;
-  margin-bottom: 60px;
 }
 
 .hero-content {
@@ -135,7 +134,7 @@ p {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   padding: 40px;
-  margin-bottom: 60px;
+  margin: 20px 0;
   position: relative;
   overflow: hidden;
 }
@@ -212,13 +211,13 @@ p {
 }
 
 .testimonial:before {
-  content: """;
+  content: '"';
   font-size: 4rem;
-  position: absolute;
-  top: -10px;
-  left: 10px;
   color: #bfdbfe;
   font-family: Georgia, serif;
+  float: left;
+  margin-right: 10px;
+  margin-top: -10px;
 }
 
 .testimonial p {
@@ -243,13 +242,15 @@ p {
   margin: 15px 0;
   padding-left: 35px;
   position: relative;
+  display: flex;
+  align-items: flex-start;
 }
 
 .benefits-list li::before {
   content: "✅";
-  position: absolute;
-  left: 0;
   font-size: 1.2rem;
+  margin-right: 10px;
+  flex-shrink: 0;
 }
 
 /* ROI Calculator */
@@ -271,17 +272,20 @@ p {
   padding-left: 60px;
   position: relative;
   min-height: 50px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .engagement-item {
   position: relative;
+  display: flex;
+  align-items: flex-start;
 }
 
 .engagement-item:before {
-  position: absolute;
-  left: 0;
-  top: 0;
   font-size: 2rem;
+  margin-right: 15px;
+  flex-shrink: 0;
 }
 
 .engagement-item.eco:before {
@@ -307,10 +311,9 @@ p {
 /* CTA Section */
 .cta-section {
   text-align: center;
-  padding: 60px 0;
+  padding: 10px 0;
   background-color: #f8f9fa;
   border-radius: var(--border-radius);
-  margin-bottom: 60px;
 }
 
 .cta-buttons {
@@ -466,4 +469,115 @@ footer {
 /* Ensure hero banners work correctly in navigation context */
 .hero-banner {
   margin-top: 0;
+}
+
+/* Navigation vers les autres pages */
+.navigation-section {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #f8f9fa;
+  border-radius: var(--border-radius);
+}
+
+.navigation-section h2 {
+  margin-bottom: 2rem;
+}
+
+.page-nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.page-nav-item {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px 25px;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: block;
+}
+
+.page-nav-item:hover {
+  background-color: var(--primary-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.page-nav-item:active {
+  transform: translateY(0);
+  background-color: var(--accent-color);
+}
+
+/* Responsive pour la navigation de page */
+@media (max-width: 768px) {
+  .page-nav-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .page-nav-item {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  background-color: var(--primary-color);
+  color: white;
+  border: 2px solid var(--primary-color);
+  padding: 14px 18px;
+  border-radius: var(--border-radius);
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  display: none;
+  min-width: 50px;
+  min-height: 50px;
+  position: relative;
+  outline: none;
+}
+
+.mobile-menu-toggle:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+.mobile-menu-toggle:active {
+  transform: translateY(0);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+}
+
+.mobile-menu-toggle:focus {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: white;
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
 }
