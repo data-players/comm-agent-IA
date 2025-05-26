@@ -4,18 +4,22 @@ function showPage(pageId) {
   const pages = document.querySelectorAll('.page-section');
   pages.forEach(page => page.classList.remove('active'));
 
-  // Remove active class from all nav items
-  const navItems = document.querySelectorAll('.nav-item');
+  // Remove active class from all nav items (both main nav and page nav)
+  const navItems = document.querySelectorAll('.nav-item, .page-nav-item');
   navItems.forEach(item => item.classList.remove('active'));
 
   // Show selected page
   document.getElementById(`page-${pageId}`).classList.add('active');
 
-  // Add active class to clicked nav item
-  event.target.classList.add('active');
+  // Find and activate corresponding nav item using data-page attribute
+  const targetNavItems = document.querySelectorAll(`[data-page="${pageId}"]`);
+  targetNavItems.forEach(item => item.classList.add('active'));
 
   // Close mobile menu if open
-  document.getElementById('navMenu').classList.remove('active');
+  const mobileMenu = document.querySelector('.nav-menu');
+  if (mobileMenu) {
+    mobileMenu.classList.remove('active');
+  }
 
   // Scroll to top
   window.scrollTo(0, 0);
@@ -40,24 +44,14 @@ function showPageById(pageId) {
   const pages = document.querySelectorAll('.page-section');
   pages.forEach(page => page.classList.remove('active'));
 
-  const navItems = document.querySelectorAll('.nav-item');
+  const navItems = document.querySelectorAll('.nav-item, .page-nav-item');
   navItems.forEach(item => item.classList.remove('active'));
 
   document.getElementById(`page-${pageId}`).classList.add('active');
   
-  // Find and activate corresponding nav item
-  const navTexts = {
-    'general': 'Présentation générale',
-    'interne': 'Agent interne',
-    'public': 'Agent public',
-    'qualite': 'Qualité de service'
-  };
-  
-  navItems.forEach(item => {
-    if (item.textContent === navTexts[pageId]) {
-      item.classList.add('active');
-    }
-  });
+  // Find and activate corresponding nav item using data-page attribute
+  const targetNavItems = document.querySelectorAll(`[data-page="${pageId}"]`);
+  targetNavItems.forEach(item => item.classList.add('active'));
 }
 
 // Update URL without page reload

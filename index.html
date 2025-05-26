@@ -11,6 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Global 3D Animation Background -->
+  <div id="hero-graph" class="hero-animation-overlay"></div>
+  
   <!-- Navigation -->
   <nav class="main-nav">
     <div class="nav-container">
@@ -18,10 +21,10 @@
       <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
       <span class="nav-title">Offre Agent IA</span>
       <ul class="nav-menu" id="navMenu">
-        <li class="nav-item active" onclick="showPage('general')">Présentation générale</li>
-        <li class="nav-item" onclick="showPage('interne')">Agent interne</li>
-        <li class="nav-item" onclick="showPage('public')">Agent public</li>
-        <li class="nav-item" onclick="showPage('qualite')">Qualité de service</li>
+        <li class="nav-item active" data-page="general" onclick="showPage('general')">Présentation générale</li>
+        <li class="nav-item" data-page="interne" onclick="showPage('interne')">Agent interne</li>
+        <li class="nav-item" data-page="public" onclick="showPage('public')">Agent public</li>
+        <li class="nav-item" data-page="qualite" onclick="showPage('qualite')">Qualité de service</li>
       </ul>
     </div>
   </nav>
@@ -51,12 +54,16 @@
       </div>
       <div class="section-content">
         <p>Dans la plupart des organisations, l'information existe. Elle est stockée, classée, documentée. <strong>Et pourtant</strong>, chaque jour, vos équipes :</p>
-        <ul class="problem-list">
-          <li>Perdent des <strong>heures précieuses</strong> à chercher la bonne information</li>
-          <li>Recréent des documents qui <strong>existent déjà</strong></li>
-          <li>Sollicitent constamment les mêmes personnes pour les <strong>mêmes questions</strong></li>
-          <li>Prennent des décisions avec une <strong>vision partielle</strong> des données disponibles</li>
-        </ul>
+        <div class="grid-list problem-type">
+          <div class="grid-item-icon">❌</div>
+          <div class="grid-item-content">Perdent des <strong>heures précieuses</strong> à chercher la bonne information</div>
+          <div class="grid-item-icon">❌</div>
+          <div class="grid-item-content">Recréent des documents qui <strong>existent déjà</strong></div>
+          <div class="grid-item-icon">❌</div>
+          <div class="grid-item-content">Sollicitent constamment les mêmes personnes pour les <strong>mêmes questions</strong></div>
+          <div class="grid-item-icon">❌</div>
+          <div class="grid-item-content">Prennent des décisions avec une <strong>vision partielle</strong> des données disponibles</div>
+        </div>
         <p class="highlight-box">Le vrai problème n'est pas le manque d'information, c'est l'incapacité à la <strong>retrouver</strong> et à la <strong>exploiter efficacement</strong>.</p>
       </div>
     </section>
@@ -100,14 +107,20 @@
         <h2>Les bénéfices concrets : <br/> un véritable renfort pour vos équipes</h2>
       </div>
       <div class="section-content">
-        <ul class="benefits-list">
-          <li><strong>Gain de temps majeur</strong> : plus besoin de chercher, l'IA vous répond directement.</li>
-          <li><strong>Simplicité d'usage</strong> : on pose une question comme on le ferait à un collègue.</li>
-          <li><strong>Aller plus loin</strong> : rapports, synthèses, analyses, générés rapidement.</li>
-          <li><strong>Vision enrichie</strong> : croisement d'informations internes et de connaissances générales.</li>
-          <li><strong>Image innovante</strong> : vous montrez que vous misez sur l'IA de manière concrète et utile.</li>
-          <li><strong>Efficacité collective boostée</strong> : l'information circule, la charge cognitive diminue, et tout le monde travaille mieux.</li>
-        </ul>
+        <div class="grid-list benefits-type">
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Gain de temps majeur</strong> : plus besoin de chercher, l'IA vous répond directement.</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Simplicité d'usage</strong> : on pose une question comme on le ferait à un collègue.</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Aller plus loin</strong> : rapports, synthèses, analyses, générés rapidement.</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Vision enrichie</strong> : croisement d'informations internes et de connaissances générales.</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Image innovante</strong> : vous montrez que vous misez sur l'IA de manière concrète et utile.</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Efficacité collective boostée</strong> : l'information circule, la charge cognitive diminue, et tout le monde travaille mieux.</div>
+        </div>
       </div>
     </section>
 
@@ -118,13 +131,18 @@
         <h2>Nos engagements : <br/> une technologie responsable, souveraine et accessible</h2>
       </div>
       <div class="section-content">
-        <ul class="engagements-list">
-          <li class="engagement-item eco"><strong>Frugalité</strong> : une solution pensée pour consommer un minimum d'énergie et alimentée par des énergies renouvelables.</li>
-          <li class="engagement-item sovereign"><strong>Souveraineté</strong> : vos données restent protégées, non exploitées à d'autres fins, grâce à l'utilisation de modèles de neurones open source. et de la maítrise du lieu d'éxécution des modèles.</li>
-          <li class="engagement-item lowcode"><strong>Low-code</strong> : la solution évolue facilement, et peut être par vous-même sans dépendre de compétences avancées en développement logiciel.</li>
-          <li class="engagement-item price"><strong>Tarifs compétitifs</strong> : Nos outils réduisent les coûts pour permettre aux structures de taille moyenne d'accéder à toute la puissance de l'IA appliqué à vos cas d'usage, avec un retour sur investissement rapide.</li>
-          <li class="engagement-item maintenance"><strong>Maintenance</strong> : Vous bénéficiez d'une garantie de fonctionnement et d'une mise à jour technologique et fonctionnelle régulière.</li>
-        </ul>
+        <div class="grid-list engagements-type">
+          <div class="grid-item-icon">♻️</div>
+          <div class="grid-item-content"><strong>Frugalité</strong> : une solution pensée pour consommer un minimum d'énergie et alimentée par des énergies renouvelables.</div>
+          <div class="grid-item-icon">🇪🇺</div>
+          <div class="grid-item-content"><strong>Souveraineté</strong> : vos données restent protégées, non exploitées à d'autres fins, grâce à l'utilisation de modèles de neurones open source. et de la maítrise du lieu d'éxécution des modèles.</div>
+          <div class="grid-item-icon">🛠️</div>
+          <div class="grid-item-content"><strong>Low-code</strong> : la solution évolue facilement, et peut être par vous-même sans dépendre de compétences avancées en développement logiciel.</div>
+          <div class="grid-item-icon">💶</div>
+          <div class="grid-item-content"><strong>Tarifs compétitifs</strong> : Nos outils réduisent les coûts pour permettre aux structures de taille moyenne d'accéder à toute la puissance de l'IA appliqué à vos cas d'usage, avec un retour sur investissement rapide.</div>
+          <div class="grid-item-icon">🔧</div>
+          <div class="grid-item-content"><strong>Maintenance</strong> : Vous bénéficiez d'une garantie de fonctionnement et d'une mise à jour technologique et fonctionnelle régulière.</div>
+        </div>
       </div>
     </section>
 
@@ -154,6 +172,8 @@
     <!-- Page interne -->
     <div id="page-interne" class="page-section">
       <div class="hero-banner">
+    <!-- Removed: 3D Animation Container is now in template.html -->
+    
     <div class="container">
       <header>
         <div class="hero-content">
@@ -173,12 +193,16 @@
       </div>
       <div class="section-content">
         <p>Au sein de votre organisation, vos collaborateurs font face à des obstacles récurrents :</p>
-        <ul class="problem-list">
-          <li><strong>Silos d'information</strong> : chaque service détient ses données sans vue transversale</li>
-          <li><strong>Perte de temps</strong> : recherches répétitives dans différents systèmes</li>
-          <li><strong>Dépendance inter-services</strong> : attente de réponses qui ralentit les projets</li>
-          <li><strong>Expertise dispersée</strong> : difficile de retrouver qui sait quoi</li>
-        </ul>
+        <div class="grid-list problem-type">
+          <div class="grid-item-icon">❌</div>
+          <div class="grid-item-content"><strong>Silos d'information</strong> : chaque service détient ses données sans vue transversale</div>
+          <div class="grid-item-icon">❌</div>
+          <div class="grid-item-content"><strong>Perte de temps</strong> : recherches répétitives dans différents systèmes</div>
+          <div class="grid-item-icon">❌</div>
+          <div class="grid-item-content"><strong>Dépendance inter-services</strong> : attente de réponses qui ralentit les projets</div>
+          <div class="grid-item-icon">❌</div>
+          <div class="grid-item-content"><strong>Expertise dispersée</strong> : difficile de retrouver qui sait quoi</div>
+        </div>
         <p class="highlight-box">Résultat : vos équipes passent plus de temps à <strong>chercher</strong> l'information qu'à <strong>l'exploiter</strong> pour créer de la valeur.</p>
       </div>
     </section>
@@ -222,14 +246,20 @@
         <h2>Les bénéfices pour votre organisation</h2>
       </div>
       <div class="section-content">
-        <ul class="benefits-list">
-          <li><strong>Productivité décuplée</strong> : moins de recherches, plus d'actions à valeur ajoutée</li>
-          <li><strong>Collaboration renforcée</strong> : fin des silos, partage naturel des connaissances</li>
-          <li><strong>Décisions éclairées</strong> : analyses croisées et signaux faibles détectés automatiquement</li>
-          <li><strong>Montée en compétence</strong> : chaque collaborateur accède à l'expertise collective</li>
-          <li><strong>Organisation structurée</strong> : le savoir de l'entreprise est capitalisé et facilement retrouvé</li>
-          <li><strong>Economies grâce à l'efficacité</strong> : gains de temps et réduction des coûts</li>
-        </ul>
+        <div class="grid-list benefits-type">
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Productivité décuplée</strong> : moins de recherches, plus d'actions à valeur ajoutée</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Collaboration renforcée</strong> : fin des silos, partage naturel des connaissances</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Décisions éclairées</strong> : analyses croisées et signaux faibles détectés automatiquement</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Montée en compétence</strong> : chaque collaborateur accède à l'expertise collective</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Organisation structurée</strong> : le savoir de l'entreprise est capitalisé et facilement retrouvé</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Economies grâce à l'efficacité</strong> : gains de temps et réduction des coûts</div>
+        </div>
       </div>
     </section>
 
@@ -240,13 +270,18 @@
         <h2>Vos données restent vos données</h2>
       </div>
       <div class="section-content">
-        <ul class="engagements-list">
-          <li class="engagement-item sovereign"><strong>Serveurs européens dédiés</strong> : aucune fuite vers des juridictions étrangères</li>
-          <li class="engagement-item eco"><strong>Infrastructure éco-responsable</strong> : serveurs alimentés en énergie renouvelable</li>
-          <li class="engagement-item maintenance"><strong>Support réactif</strong> : SAV 9h-17h, résolution en 2 jours maximum</li>
-          <li class="engagement-item lowcode"><strong>Évolutivité maîtrisée</strong> : adaptez l'outil à vos besoins sans développeur</li>
-          <li class="engagement-item price"><strong>Forfait tout compris</strong> : coûts maîtrisés, sans surprise budgétaire</li>
-        </ul>
+        <div class="grid-list engagements-type">
+          <div class="grid-item-icon">🇪🇺</div>
+          <div class="grid-item-content"><strong>Serveurs européens dédiés</strong> : aucune fuite vers des juridictions étrangères</div>
+          <div class="grid-item-icon">♻️</div>
+          <div class="grid-item-content"><strong>Infrastructure éco-responsable</strong> : serveurs alimentés en énergie renouvelable</div>
+          <div class="grid-item-icon">🔧</div>
+          <div class="grid-item-content"><strong>Support réactif</strong> : SAV 9h-17h, résolution en 2 jours maximum</div>
+          <div class="grid-item-icon">🛠️</div>
+          <div class="grid-item-content"><strong>Évolutivité maîtrisée</strong> : adaptez l'outil à vos besoins sans développeur</div>
+          <div class="grid-item-icon">💶</div>
+          <div class="grid-item-content"><strong>Forfait tout compris</strong> : coûts maîtrisés, sans surprise budgétaire</div>
+        </div>
       </div>
     </section>
 
@@ -265,13 +300,16 @@
       <div>
       <h2>Continuer votre visite</h2>
       <ul class="page-nav-menu" id="navMenu">
-        <li class="page-nav-item" onclick="showPage('pitch')">Présentation générale</li>
+        <li class="page-nav-item" onclick="showPage('general')">Présentation générale</li>
         <li class="page-nav-item" onclick="showPage('public')">Agent public</li>
         <li class="page-nav-item" onclick="showPage('qualite')">Qualité de service</li>
       </ul>
       </div>
     </section>
   </div>
+
+  
+  <!-- 3D Force Graph library via CDN -->
     </div>
 
     <!-- Page public -->
@@ -296,12 +334,16 @@
       </div>
       <div class="section-content">
         <p>Vos usagers et bénéficiaires peinent à trouver les informations dont ils ont besoin :</p>
-        <ul class="problem-list">
-          <li><strong>Complexité d'accès</strong> : sites multiples, documents éparpillés, jargon technique</li>
-          <li><strong>Temps perdu</strong> : navigation laborieuse pour trouver la bonne information</li>
-          <li><strong>Frustration</strong> : abandon face à la difficulté, recours systématique au support</li>
-          <li><strong>Inégalité d'accès</strong> : seuls les initiés trouvent rapidement l'information</li>
-        </ul>
+        <div class="grid-list problem-type">
+          <div class="grid-item-icon">❌</div>
+          <div class="grid-item-content"><strong>Complexité d'accès</strong> : sites multiples, documents éparpillés, jargon technique</div>
+          <div class="grid-item-icon">❌</div>
+          <div class="grid-item-content"><strong>Temps perdu</strong> : navigation laborieuse pour trouver la bonne information</div>
+          <div class="grid-item-icon">❌</div>
+          <div class="grid-item-content"><strong>Frustration</strong> : abandon face à la difficulté, recours systématique au support</div>
+          <div class="grid-item-icon">❌</div>
+          <div class="grid-item-content"><strong>Inégalité d'accès</strong> : seuls les initiés trouvent rapidement l'information</div>
+        </div>
         <p class="highlight-box">Votre expertise existe, mais elle reste <strong>invisible</strong> ou <strong>inaccessible</strong> pour ceux qui en ont le plus besoin.</p>
       </div>
     </section>
@@ -345,14 +387,20 @@
         <h2>Les bénéfices pour vos usagers et votre organisation</h2>
       </div>
       <div class="section-content">
-        <ul class="benefits-list">
-          <li><strong>Expérience utilisateur transformée</strong> : accès immédiat aux informations pertinentes</li>
-          <li><strong>Égalité d'accès</strong> : tous les publics trouvent facilement ce qu'ils cherchent</li>
-          <li><strong>Réduction du support</strong> : moins de sollicitations répétitives de vos équipes</li>
-          <li><strong>Image moderne et innovante</strong> : positionnement à la pointe de l'IA</li>
-          <li><strong>Valorisation de votre expertise</strong> : vos connaissances deviennent un véritable service</li>
-          <li><strong>Usage illimité</strong> : vous maitrisez votre politique de consommation d'énergie globale et par utilisateur</li>
-        </ul>
+        <div class="grid-list benefits-type">
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Expérience utilisateur transformée</strong> : accès immédiat aux informations pertinentes</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Égalité d'accès</strong> : tous les publics trouvent facilement ce qu'ils cherchent</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Réduction du support</strong> : moins de sollicitations répétitives de vos équipes</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Image moderne et innovante</strong> : positionnement à la pointe de l'IA</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Valorisation de votre expertise</strong> : vos connaissances deviennent un véritable service</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Usage illimité</strong> : vous maitrisez votre politique de consommation d'énergie globale et par utilisateur</div>
+        </div>
       </div>
     </section>
 
@@ -363,13 +411,18 @@
         <h2>Une IA éthique et responsable pour le public</h2>
       </div>
       <div class="section-content">
-        <ul class="engagements-list">
-          <li class="engagement-item eco"><strong>Impact environnemental maîtrisé</strong> : serveurs alimentés en énergie renouvelable</li>
-          <li class="engagement-item sovereign"><strong>Souveraineté européenne</strong> : vos données restent vos données vous choisissez son usage, modèles open source</li>
-          <li class="engagement-item price"><strong>Démocratisation de l'IA</strong> : tarifs adaptés aux structures de taille moyenne</li>
-          <li class="engagement-item maintenance"><strong>Fiabilité garantie</strong> : sources vérifiables, informations traçables</li>
-          <li class="engagement-item lowcode"><strong>Évolution continue</strong> : veille technologique et mises à jour régulières</li>
-        </ul>
+        <div class="grid-list engagements-type">
+          <div class="grid-item-icon">♻️</div>
+          <div class="grid-item-content"><strong>Impact environnemental maîtrisé</strong> : serveurs alimentés en énergie renouvelable</div>
+          <div class="grid-item-icon">🇪🇺</div>
+          <div class="grid-item-content"><strong>Souveraineté européenne</strong> : vos données restent vos données vous choisissez son usage, modèles open source</div>
+          <div class="grid-item-icon">💶</div>
+          <div class="grid-item-content"><strong>Démocratisation de l'IA</strong> : tarifs adaptés aux structures de taille moyenne</div>
+          <div class="grid-item-icon">🔧</div>
+          <div class="grid-item-content"><strong>Fiabilité garantie</strong> : sources vérifiables, informations traçables</div>
+          <div class="grid-item-icon">🌀</div>
+          <div class="grid-item-content"><strong>Évolution continue</strong> : veille technologique et mises à jour régulières</div>
+        </div>
       </div>
     </section>
 
@@ -418,10 +471,10 @@
     <section id="navigation-pages" class="navigation-section">
       <div>
       <h2>Continuer votre visite</h2>
-      <ul class="page-nav-menu" id="navMenu">
-        <li class="page-nav-item" onclick="showPage('pitch')">Présentation générale</li>
-        <li class="page-nav-item" onclick="showPage('interne')">Agent interne</li>
-        <li class="page-nav-item" onclick="showPage('qualite')">Qualité de service</li>
+      <ul class="page-nav-menu" id="pageNavMenu">
+        <li class="page-nav-item" data-page="general" onclick="showPage('general')">Présentation générale</li>
+        <li class="page-nav-item" data-page="interne" onclick="showPage('interne')">Agent interne</li>
+        <li class="page-nav-item" data-page="qualite" onclick="showPage('qualite')">Qualité de service</li>
       </ul>
       </div>
     </section>
@@ -482,14 +535,20 @@
         <h2>Un support réactif et des engagements tenus</h2>
       </div>
       <div class="section-content">
-        <ul class="benefits-list">
-          <li><strong>Support 9h-17h</strong> : équipe française disponible pendant les heures ouvrées</li>
-          <li><strong>Résolution en 2 jours maximum</strong> : délais maîtrisés et engagements respectés</li>
-          <li><strong>Interlocuteur unique par projet</strong> : suivi personnalisé et relation de confiance</li>
-          <li><strong>Outil de ticketing intégré</strong> : traçabilité complète de vos demandes</li>
-          <li><strong>Maintenance évolutive</strong> : votre solution reste à jour sans effort de votre part</li>
-          <li><strong>Veille technologique</strong> : bénéficiez automatiquement des dernières innovations IA</li>
-        </ul>
+        <div class="grid-list benefits-type">
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Support 9h-17h</strong> : équipe française disponible pendant les heures ouvrées</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Résolution en 2 jours maximum</strong> : délais maîtrisés et engagements respectés</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Interlocuteur unique par projet</strong> : suivi personnalisé et relation de confiance</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Outil de ticketing intégré</strong> : traçabilité complète de vos demandes</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Maintenance évolutive</strong> : votre solution reste à jour sans effort de votre part</div>
+          <div class="grid-item-icon">✅</div>
+          <div class="grid-item-content"><strong>Veille technologique</strong> : bénéficiez automatiquement des dernières innovations IA</div>
+        </div>
         <p class="highlight-box">Notre promesse : vous concentrer sur votre métier pendant que nous nous occupons de la technique.</p>
       </div>
     </section>
@@ -520,7 +579,7 @@
           <div class="solution-feature">
             <div class="feature-icon">🏆</div>
             <h3>Conformité RSE</h3>
-            <p>Solution qui répond aux exigences des appels d'offres et certifications environnementales</p>
+            <p>Solution qui dont les caractéristiques sont adaptées aux appels d'offres incluant des critères de RSE</p>
           </div>
         </div>
       </div>
@@ -533,14 +592,20 @@
         <h2>Des garanties qui sécurisent votre investissement</h2>
       </div>
       <div class="section-content">
-        <ul class="engagements-list">
-          <li class="engagement-item price"><strong>Forfait tout compris</strong> : budget maîtrisé sans surprise, coûts transparents</li>
-          <li class="engagement-item delivery"><strong>Livraison en 2 mois</strong> : mise en œuvre rapide et garantie de délais</li>
-          <li class="engagement-item lowcode"><strong>Solution Low-Code</strong> : évoluez en autonomie sans dépendance technique</li>
-          <li class="engagement-item scalable"><strong>Évolutivité garantie</strong> : votre solution grandit avec vos besoins</li>
-          <li class="engagement-item roi"><strong>ROI rapide</strong> : retour sur investissement visible dès les premiers mois</li>
-          <li class="engagement-item availability"><strong>Disponibilité assurée</strong> : service accessible quand vous en avez besoin</li>
-        </ul>
+        <div class="grid-list engagements-type">
+          <div class="grid-item-icon">💶</div>
+          <div class="grid-item-content"><strong>Forfait tout compris</strong> : budget maîtrisé sans surprise, coûts transparents</div>
+          <div class="grid-item-icon">🚀</div>
+          <div class="grid-item-content"><strong>Livraison en 2 mois</strong> : mise en œuvre rapide et garantie de délais</div>
+          <div class="grid-item-icon">🛠️</div>
+          <div class="grid-item-content"><strong>Solution Low-Code</strong> : évoluez en autonomie sans dépendance technique</div>
+          <div class="grid-item-icon">📈</div>
+          <div class="grid-item-content"><strong>Évolutivité garantie</strong> : votre solution grandit avec vos besoins</div>
+          <div class="grid-item-icon">💰</div>
+          <div class="grid-item-content"><strong>ROI rapide</strong> : retour sur investissement visible dès les premiers mois</div>
+          <div class="grid-item-icon">🔧</div>
+          <div class="grid-item-content"><strong>Disponibilité assurée</strong> : service accessible quand vous en avez besoin</div>
+        </div>
         <p class="highlight-box">Avec DATA PLAYERS, vous investissez dans une solution <strong>pérenne</strong>, <strong>évolutive</strong> et <strong>maintenue</strong> par des experts français.</p>
       </div>
     </section>
@@ -559,7 +624,7 @@
       <div>
       <h2>Continuer votre visite</h2>
       <ul class="page-nav-menu" id="navMenu">
-        <li class="page-nav-item" onclick="showPage('pitch')">Présentation générale</li>
+        <li class="page-nav-item" onclick="showPage('general')">Présentation générale</li>
         <li class="page-nav-item" onclick="showPage('interne')">Agent interne</li>
         <li class="page-nav-item" onclick="showPage('public')">Agent public</li>
       </ul>
@@ -595,5 +660,8 @@
   </footer>
 
   <script src="navigation.js"></script>
+  <!-- 3D Force Graph library via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/3d-force-graph"></script>
+  <script src="hero-animation.js"></script>
 </body>
 </html> 

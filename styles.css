@@ -17,7 +17,9 @@ body {
   font-family: 'Open Sans', Arial, sans-serif;
   line-height: 1.6;
   color: var(--text-color);
-  background: var(--background-light);
+  background: transparent;
+  position: relative;
+  z-index: 1;
 }
 
 .container {
@@ -58,15 +60,19 @@ p {
 
 /* Hero Section */
 .hero-banner {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
   color: white;
   padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
 }
 
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 3;
 }
 
 .hero-content h1, 
@@ -130,13 +136,15 @@ p {
 
 /* Section Cards */
 .section-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   padding: 40px;
   margin: 20px 0;
   position: relative;
   overflow: hidden;
+  color: var(--text-color);
+  backdrop-filter: blur(10px);
 }
 
 .section-icon {
@@ -148,30 +156,40 @@ p {
   margin-top: 1.5rem;
 }
 
-/* Problem List */
-.problem-list {
-  list-style: none;
+/* Transformation en vrai CSS Grid avec enfants directs */
+.grid-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem 1rem;
   padding: 0;
   margin: 1.5rem 0;
+  align-items: center;
 }
 
-.problem-list li {
-  padding: 10px 0 10px 30px;
-  position: relative;
+.grid-item-icon {
+  width: 2.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  justify-self: center;
+  padding: 15px 0;
 }
 
-.problem-list li:before {
-  content: "❌";
-  position: absolute;
-  left: 0;
+.grid-item-content {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  padding: 15px 0;
 }
 
-.highlight-box {
-  background-color: #f8f9fa;
-  border-left: 4px solid var(--primary-color);
-  padding: 15px 20px;
-  margin: 1.5rem 0;
-  font-size: 1.1rem;
+.grid-item-content strong {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+
+.grid-list.engagements-type .grid-item-icon {
+  font-size: 2rem;
+  width: 3rem;
+  padding: 20px 0;
 }
 
 /* Solution Grid */
@@ -232,27 +250,6 @@ p {
   font-style: normal;
 }
 
-/* Benefits List */
-.benefits-list, .engagements-list {
-  list-style: none;
-  padding: 0;
-}
-
-.benefits-list li {
-  margin: 15px 0;
-  padding-left: 35px;
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-}
-
-.benefits-list li::before {
-  content: "✅";
-  font-size: 1.2rem;
-  margin-right: 10px;
-  flex-shrink: 0;
-}
-
 /* ROI Calculator */
 .roi-calculator {
   background-color: #f0f9ff;
@@ -266,54 +263,13 @@ p {
   margin-top: 0;
 }
 
-/* Engagements List */
-.engagements-list li {
-  margin: 20px 0;
-  padding-left: 60px;
-  position: relative;
-  min-height: 50px;
-  display: flex;
-  align-items: flex-start;
-}
-
-.engagement-item {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-}
-
-.engagement-item:before {
-  font-size: 2rem;
-  margin-right: 15px;
-  flex-shrink: 0;
-}
-
-.engagement-item.eco:before {
-  content: "♻️";
-}
-
-.engagement-item.sovereign:before {
-  content: "🇪🇺";
-}
-
-.engagement-item.lowcode:before {
-  content: "🛠️";
-}
-
-.engagement-item.price:before {
-  content: "💶";
-}
-
-.engagement-item.maintenance:before {
-  content: "🔧";
-}
-
 /* CTA Section */
 .cta-section {
   text-align: center;
   padding: 10px 0;
   background-color: #f8f9fa;
   border-radius: var(--border-radius);
+  color: var(--text-color);
 }
 
 .cta-buttons {
@@ -325,7 +281,9 @@ p {
 
 /* Footer */
 footer {
-  background-color: #f8f9fa;
+  position: relative;
+  z-index: 2;
+  background-color: rgba(248, 249, 250, 0.95);
   color: #333;
   padding: 3rem 0;
   margin-top: 4rem;
@@ -411,6 +369,15 @@ footer {
   .hero-banner {
     padding: 60px 0;
   }
+  
+  .grid-list {
+    gap: 0.8rem 0.8rem;
+  }
+  
+  .grid-item-icon {
+    width: 2rem;
+    font-size: 1rem;
+  }
 }
 
 /* Style pour l'en-tête de section avec icône à gauche du titre */
@@ -431,6 +398,9 @@ footer {
 
 /* Navigation enhancements */
 .main-nav {
+  position: relative;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.9);
   transition: all 0.3s ease;
 }
 
@@ -477,6 +447,7 @@ footer {
   padding: 10px 0;
   background-color: #f8f9fa;
   border-radius: var(--border-radius);
+  color: var(--text-color);
 }
 
 .navigation-section h2 {
@@ -534,50 +505,121 @@ footer {
   }
 }
 
-/* Mobile Menu Toggle Button */
-.mobile-menu-toggle {
-  background-color: var(--primary-color);
-  color: white;
-  border: 2px solid var(--primary-color);
-  padding: 14px 18px;
+/* Highlight Box - Encarts visuels distinctifs */
+.highlight-box {
+  background: #fefce8;
+  border: 1px solid #d4a574;
+  border-left: 4px solid #d4a574;
   border-radius: var(--border-radius);
-  font-size: 1.8rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow);
-  display: none;
-  min-width: 50px;
-  min-height: 50px;
-  position: relative;
-  outline: none;
+  padding: 20px 25px;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #374151;
 }
 
-.mobile-menu-toggle:hover {
-  background-color: var(--primary-dark);
-  border-color: var(--primary-dark);
+.highlight-box strong {
+  color: #92400e;
+  font-weight: 700;
+}
+
+.highlight-box p {
+  margin: 0;
+  color: #374151;
+}
+
+/* Variante pour les encarts d'alerte/problème */
+.highlight-box.warning {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  border-left-color: #f59e0b;
+}
+
+.highlight-box.warning strong {
+  color: #92400e;
+}
+
+/* Variante pour les encarts de succès */
+.highlight-box.success {
+  background: #f0fdf4;
+  border-color: #22c55e;
+  border-left-color: #22c55e;
+}
+
+.highlight-box.success strong {
+  color: #166534;
+}
+
+/* Variante info/note classique */
+.highlight-box.info {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  border-left-color: #94a3b8;
+}
+
+.highlight-box.info strong {
+  color: #475569;
+}
+
+/* Animation au hover */
+.highlight-box {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.highlight-box:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.mobile-menu-toggle:active {
-  transform: translateY(0);
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  color: white;
-}
-
-.mobile-menu-toggle:focus {
-  background-color: var(--primary-dark);
-  border-color: var(--primary-dark);
-  color: white;
-  outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
-}
-
+/* Responsive pour highlight-box */
 @media (max-width: 768px) {
-  .mobile-menu-toggle {
-    display: block;
+  .highlight-box {
+    padding: 15px 20px;
+    font-size: 1rem;
+    margin: 1.5rem 0;
   }
+}
+
+/* Hero banner positioning for 3D overlay */
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ensure hero content is above the 3D animation */
+.hero-banner .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-banner .hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* Optional: Add a subtle backdrop filter for better text readability */
+.hero-banner .hero-content h1,
+.hero-banner .hero-content .tagline {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* 3D Animation Overlay - Global Background */
+.hero-animation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.4;
+  background: linear-gradient(135deg, #000000 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+/* Ensure all page content is above the animation */
+.page-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.8);
+  min-height: 100vh;
 }

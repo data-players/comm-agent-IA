@@ -11,6 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Global 3D Animation Background -->
+  <div id="hero-graph" class="hero-animation-overlay"></div>
+  
   <!-- Navigation -->
   <nav class="main-nav">
     <div class="nav-container">
@@ -18,10 +21,10 @@
       <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
       <span class="nav-title">Offre Agent IA</span>
       <ul class="nav-menu" id="navMenu">
-        <li class="nav-item active" onclick="showPage('general')">Présentation générale</li>
-        <li class="nav-item" onclick="showPage('interne')">Agent interne</li>
-        <li class="nav-item" onclick="showPage('public')">Agent public</li>
-        <li class="nav-item" onclick="showPage('qualite')">Qualité de service</li>
+        <li class="nav-item active" data-page="general" onclick="showPage('general')">Présentation générale</li>
+        <li class="nav-item" data-page="interne" onclick="showPage('interne')">Agent interne</li>
+        <li class="nav-item" data-page="public" onclick="showPage('public')">Agent public</li>
+        <li class="nav-item" data-page="qualite" onclick="showPage('qualite')">Qualité de service</li>
       </ul>
     </div>
   </nav>
@@ -73,5 +76,8 @@
   </footer>
 
   <script src="navigation.js"></script>
+  <!-- 3D Force Graph library via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/3d-force-graph"></script>
+  <script src="hero-animation.js"></script>
 </body>
 </html> 
