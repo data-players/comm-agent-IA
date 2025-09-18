@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent IA – DATA PLAYERS</title>
+  <meta name="description" content="Agent IA - Exploitez vos bases de connaissances. Souverain, frugal, éthique.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-blue: #2563eb;
+      --dark-blue: #1e40af;
+      --light-gray: #f8fafc;
+      --dark-gray: #374151;
+      --text-dark: #1f2937;
+      --hexagon-stroke: #cbd5e1;
+    }
+
+    /* Global */
+    html, body { 
+      height: 100%; 
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text-dark);
+      background: var(--light-gray);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .page {
+      min-height: 100vh;
+      background: var(--light-gray);
+      position: relative;
+    }
+
+    .container {
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 0mm;
+      background: white;
+      min-height: 297mm;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Hexagon background pattern */
+    .hexagon-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.25;
+      z-index: 0;
+    }
+
+    /* Main title */
+    .main-title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 72pt;
+      color: var(--text-dark);
+      margin: 0mm 0 0mm 0;
+      letter-spacing: 2px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Central diagram */
+    .diagram {
+      height: 150mm;
+      margin: 0mm 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Blue banner */
+    .blue-banner {
+      background: var(--primary-blue);
+      color: white;
+      padding: 6mm 0;
+      width: 100%;
+      margin: 5mm 0mm 5mm 0mm;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 16pt;
+      letter-spacing: 1px;
+      z-index: 1;
+    }
+
+    /* Main content */
+    .main-content {
+      margin: 0 10mm 0mm 10mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    .main-content h2 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 24pt;
+      color: var(--text-dark);
+      margin: 0 0 10mm 0;
+      line-height: 1.2;
+    }
+
+    .main-content p {
+      font-size: 14pt;
+      color: var(--dark-gray);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--dark-gray);
+      color: white;
+      padding: 6mm 0;
+      width: 100%;
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-left {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      padding-left: 8mm;
+    }
+
+    .footer-right {
+      padding-right: 8mm;
+    }
+
+    /* Print styles */
+    @media print {
+      @page { size: A4 portrait; margin: 0; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      body { background: var(--light-gray) !important; }
+      .page { background: var(--light-gray) !important; }
+      .container { 
+        background: white !important; 
+        width: 210mm;
+        height: 297mm;
+        padding: 0mm;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Hexagon background pattern -->
+    <svg class="hexagon-bg" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+      <!-- Large perfect hexagons -->
+      <polygon points="60,30 85,46.96 85,80.04 60,97 35,80.04 35,46.96" fill="none" stroke="#1e40af" stroke-width="2"/>
+      <polygon points="320,50 350,67.32 350,101.68 320,119 290,101.68 290,67.32" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+      <polygon points="150,130 180,148.66 180,185.34 150,204 120,185.34 120,148.66" fill="none" stroke="#374151" stroke-width="2.5"/>
+      
+      <!-- Medium perfect hexagons -->
+      <polygon points="80,190 92,198.94 92,216.06 80,225 68,216.06 68,198.94" fill="none" stroke="#4b5563" stroke-width="1.5"/>
+      <polygon points="250,85 270,98.66 270,125.34 250,139 230,125.34 230,98.66" fill="#f1f5f9" stroke="#6b7280" stroke-width="1.2"/>
+      <polygon points="350,185 367,195.77 367,217.23 350,228 333,217.23 333,195.77" fill="none" stroke="#1d4ed8" stroke-width="1.4"/>
+      <polygon points="30,330 50,343.32 50,369.68 30,383 10,369.68 10,343.32" fill="#e0e7ff" stroke="#3730a3" stroke-width="2"/>
+      <polygon points="180,290 205,307.16 205,341.84 180,359 155,341.84 155,307.16" fill="none" stroke="#111827" stroke-width="1.8"/>
+      
+      <!-- Small perfect hexagons -->
+      <polygon points="120,65 128,70.62 128,81.38 120,87 112,81.38 112,70.62" fill="#f8fafc" stroke="#64748b" stroke-width="1"/>
+      <polygon points="300,145 305.5,148.66 305.5,156.34 300,160 294.5,156.34 294.5,148.66" fill="none" stroke="#1e3a8a" stroke-width="1"/>
+      <polygon points="40,265 46,268.66 46,276.34 40,280 34,276.34 34,268.66" fill="none" stroke="#4b5563" stroke-width="1.2"/>
+      <polygon points="380,325 384,327.46 384,332.54 380,335 376,332.54 376,327.46" fill="#dbeafe" stroke="#2563eb" stroke-width="0.8"/>
+      <polygon points="200,405 208,410.62 208,421.38 200,427 192,421.38 192,410.62" fill="none" stroke="#6b7280" stroke-width="1.3"/>
+      <polygon points="320,385 332.5,392.16 332.5,406.84 320,414 307.5,406.84 307.5,392.16" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <polygon points="80,455 86,458.66 86,466.34 80,470 74,466.34 74,458.66" fill="#e5e7eb" stroke="#374151" stroke-width="0.9"/>
+      
+      <!-- Additional scattered perfect hexagons -->
+      <polygon points="220,55 224,57.46 224,62.54 220,65 216,62.54 216,57.46" fill="none" stroke="#1e40af" stroke-width="0.8"/>
+      <polygon points="50,145 58,150.62 58,161.38 50,167 42,161.38 42,150.62" fill="none" stroke="#4b5563" stroke-width="1.1"/>
+      <polygon points="280,225 295,234.5 295,253.5 280,263 265,253.5 265,234.5" fill="#f3f4f6" stroke="#111827" stroke-width="1.4"/>
+      <polygon points="370,265 372.5,266.73 372.5,270.27 370,272 367.5,270.27 367.5,266.73" fill="none" stroke="#3b82f6" stroke-width="0.6"/>
+      <polygon points="140,365 152.5,372.16 152.5,386.84 140,394 127.5,386.84 127.5,372.16" fill="none" stroke="#6366f1" stroke-width="1.5"/>
+      <polygon points="250,485 265,495.5 265,516.5 250,527 235,516.5 235,495.5" fill="none" stroke="#1f2937" stroke-width="1.9"/>
+      <polygon points="90,350 95,353.3 95,359.7 90,363 85,359.7 85,353.3" fill="#ddd6fe" stroke="#5b21b6" stroke-width="1"/>
+      <polygon points="310,300 316,304.62 316,315.38 310,320 304,315.38 304,304.62" fill="none" stroke="#0c4a6e" stroke-width="1.2"/>
+    </svg>
+
+    <main class="container">
+      <!-- Main title -->
+      <h1 class="main-title">AGENT IA</h1>
+
+      <!-- Central diagram -->
+      <div class="diagram">
+        <img src="./agent_etoile_3.svg" alt="Diagramme Agent IA" style="width: 100%; height: 100%; object-fit: contain;">
+      </div>
+
+
+      <!-- Main content -->
+      <div class="main-content">
+              <!-- Blue banner -->
+      <div class="blue-banner">
+        SOUVERAIN • FRUGALE • ÉTHIQUE
+      </div>
+
+        <h2>Exploitez vos <b>bases de connaissances</b> grâce à un <b>Agent IA</b></h2>
+        <p>Un assistant intelligent qui rend vos informations<br/>accessibles, exploitables et actionnables.</p>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="footer-left">DATA PLAYERS</div>
+        <div class="footer-right">contact@dataplayers.com</div>
+      </div>
+    </main>
+  </div>
+
+  <!-- No scripts; printing handled by browser dialog -->
+</body>
+</html>
+
+
