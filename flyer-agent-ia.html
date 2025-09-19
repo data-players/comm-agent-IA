@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Agent IA – DATA PLAYERS</title>
-        <meta
-        name="description" content="Agent IA - Exploitez vos bases de connaissances. Souverain, frugal, éthique.">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agent IA – DATA PLAYERS</title>
+    <meta name="description" content="Agent IA - Exploitez vos bases de connaissances. Souverain, frugal, éthique.">
 
-        <style>:root
-        {
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
             --primary-blue: #2563eb;
             --dark-blue: #1e40af;
             --light-gray: #f8fafc;
@@ -69,14 +71,14 @@
             z-index: 1;
         }
 
-         /* Central diagram */
-         .diagram {
-             width: 120mm;
-             height: 120mm;
-             margin: 10mm 0;
-             position: relative;
-             z-index: 1;
-         }
+        /* Central diagram */
+        .diagram {
+            width: 120mm;
+            height: 120mm;
+            margin: 0mm 0;
+            position: relative;
+            z-index: 1;
+        }
 
         /* Blue banner */
         .blue-banner {
@@ -92,71 +94,73 @@
             z-index: 1;
         }
 
-         /* Main content */
-         .main-content {
-             margin: 0 auto;
-             padding: 0 10mm;
-             position: relative;
-             z-index: 1;
-         }
+        /* Main content */
+        .main-content {
+            margin: 0 auto;
+            padding: 0 10mm;
+            position: relative;
+            z-index: 1;
+        }
 
         .main-content h2 {
             font-family: "Montserrat", sans-serif;
             font-weight: 700;
             font-size: 24pt;
             color: var(--text-dark);
-            margin: 0 0 10mm;
+            margin: 0 0 2mm;
             line-height: 1.2;
         }
 
         .main-content p {
             font-size: 14pt;
             color: var(--dark-gray);
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
             line-height: 1.4;
             margin: 0;
         }
 
-         /* Footer */
-         .footer {
-             background: var(--dark-gray);
-             color: white;
-             padding: 6mm 0;
-             width: 100%;
-             margin-top: auto;
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-             font-size: 11pt;
-             position: relative;
-             z-index: 1;
-         }
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 6mm 0;
+            width: 100%;
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11pt;
+            position: relative;
+            z-index: 1;
+        }
 
-         .footer-left {
-             font-family: "Montserrat", sans-serif;
-             font-weight: 600;
-             padding-left: 8mm;
-             flex: 1;
-         }
+        .footer-left {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            padding-left: 8mm;
+            flex: 1;
+        }
 
-         .footer-middle {
-             font-family: "Montserrat", sans-serif;
-             font-weight: 600;
-             text-align: center;
-             flex: 1;
-         }
+        .footer-middle {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            text-align: center;
+            flex: 1;
+        }
 
-         .footer-right {
-             padding-right: 8mm;
-             text-align: right;
-             flex: 1;
-         }
+        .footer-right {
+            padding-right: 8mm;
+            text-align: right;
+            flex: 1;
+        }
 
-         /* Logo styling */
-         .logo {
-             max-width: 180mm;
-             height: auto;
-             margin: 5mm 0;
-         }
+        /* Logo styling */
+        .logo {
+            max-width: 180mm;
+            height: auto;
+            margin: 5mm 0;
+        }
 
         /* Print styles */
         @media print {
@@ -164,16 +168,20 @@
                 size: A4 portrait;
                 margin: 0;
             }
+
             * {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
+
             body {
                 background: var(--light-gray) !important;
             }
+
             .page {
                 background: var(--light-gray) !important;
             }
+
             .container {
                 background: white !important;
                 width: 210mm;
@@ -184,17 +192,17 @@
         }
     </style>
 </head>
+
 <body>
     <div class="page">
 
-        <main
-            class="container">
+        <main class="container">
             <!-- Main title -->
-            <h1 class="main-title">AGENT IA</h1>
-            <div
-                class="main-content">
+
+            <div class="main-content">
                 <img src="./logo_DP.png" alt="Data Players Logo" class="logo" width="100%">
                 <!-- Blue banner -->
+                <h1 class="main-title">AGENTS IA</h1>
                 <div class="blue-banner">
                     SOUVERAIN • FRUGALE • ÉTHIQUE
                 </div>
@@ -202,7 +210,8 @@
 
             <!-- Central diagram -->
             <div class="diagram">
-                <img src="./agent_etoile_3.svg" alt="Diagramme Agent IA" style="width: 100%; height: 100%; object-fit: contain;">
+                <img src="./agent_etoile_3.svg" alt="Diagramme Agent IA"
+                    style="width: 100%; height: 100%; object-fit: contain;">
             </div>
 
 
@@ -210,16 +219,15 @@
             <div class="main-content">
                 <h2>Exploitez vos
                     <b>bases de connaissances</b><br>
-                    et automatisez vos <b>tâches répétitives</b><br>
+                    et automatisez les <b>tâches répétitives</b><br>
                     grâce à
                     <b>l'IA agentique</b>
                 </h2>
-                <p>Des assistants intelligents qui rendent vos informations<br/>accessibles, exploitables et actionnables.</p>
             </div>
 
             <!-- Footer -->
             <div class="footer">
-                <div class="footer-left">dataplayers.com</div>
+                <div class="footer-left">data-players.com</div>
                 <div class="footer-middle">06.XX.XX.XX.XX</div>
                 <div class="footer-right">contact@dataplayers.com</div>
             </div>
@@ -227,4 +235,6 @@
     </div>
 
     <!-- No scripts; printing handled by browser dialog -->
-</body></html>
+</body>
+
+</html>
