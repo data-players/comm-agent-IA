@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,12 +9,20 @@
   <link rel="stylesheet" href="navigation.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
+  <!-- Logo for print only -->
+  <div class="print-only-logo">
+    <img src="./logo.webp" alt="Data Players Logo">
+  </div>
+
   <!-- Global 3D Animation Background -->
   <div id="hero-graph" class="hero-animation-overlay"></div>
-  
+
   <!-- Navigation -->
   <nav class="main-nav">
     <div class="nav-container">
@@ -45,7 +54,7 @@
     <div id="page-public" class="page-section">
       {{PUBLIC_CONTENT}}
     </div>
-    
+
     <!-- Page qualité -->
     <div id="page-qualite" class="page-section">
       {{QUALITE_CONTENT}}
@@ -84,4 +93,5 @@
   <script src="https://cdn.jsdelivr.net/npm/3d-force-graph"></script>
   <script src="hero-animation.js"></script>
 </body>
-</html> 
+
+</html>
